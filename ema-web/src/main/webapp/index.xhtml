@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+  <h:head>
+    <title>EMA Editor</title>
+
+    <h:outputStylesheet library="default" name="css/bootstrap.css" />
+    <h:outputScript library="default" name="js/jquery-1.10.2.js" />
+    <h:outputScript library="default" name="js/jquery.overlay.js" />
+    <h:outputScript library="default" name="js/jquery.textcomplete.js" />
+    <h:outputScript library="default" name="js/main.js" />
+
+</h:head>
+  <h:body>
+    <div class="container">
+        <div class="page-header">
+          <h1>Autocompletado en Textarea</h1>
+        </div>
+        <h3>Etiquetas</h3>
+        <div><textarea id="textarea2"  class="brush: js" rows="4" style="display: block; width: 100%;">Please input HTML element: </textarea></div>		
+    </div>
+      
+ <!--     <h:inputTextarea id="textarea2">
+          
+      </h:inputTextarea>
+     --> 
+      <p:inputTextarea
+                       value="#{autocompleteBean.txt1}"
+                       completeMethod="#{autocompleteBean.complete}"
+                       minQueryLength="1">
+          
+      </p:inputTextarea>
+     
+     <h:form>
+     <p:autoComplete  value="#{autocompleteBean.txt1}"
+                       completeMethod="#{autocompleteBean.complete}"   />
+     </h:form>
+  </h:body>
+</html>
